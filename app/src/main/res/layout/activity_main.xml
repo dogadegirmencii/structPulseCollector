@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Labels -->
+    <EditText
+        android:id="@+id/inputElementType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Element type (e.g., Column)"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:imeOptions="actionNext"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/inputDamageLevel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Damage level (e.g., 2)"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:imeOptions="actionNext"
+        app:layout_constraintTop_toBottomOf="@+id/inputElementType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/inputImpactType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Impact type (e.g., drop)"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:imeOptions="actionNext"
+        app:layout_constraintTop_toBottomOf="@+id/inputDamageLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/inputRepNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Rep number (e.g., 3)"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:imeOptions="actionDone"
+        app:layout_constraintTop_toBottomOf="@+id/inputImpactType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Controls -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintTop_toBottomOf="@+id/inputRepNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStop"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:enabled="false"
+        app:layout_constraintTop_toTopOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        app:layout_constraintEnd_toStartOf="@+id/btnExport"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/btnExport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Export"
+        android:enabled="false"
+        app:layout_constraintTop_toTopOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/btnStop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Status: Idle"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp" />
+
+    <!-- Recent sessions -->
+    <TextView
+        android:id="@+id/txtRecentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Recent sessions (last 5):"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/txtRecentList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="(none)"
+        android:textSize="14sp"
+        android:paddingTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtRecentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
